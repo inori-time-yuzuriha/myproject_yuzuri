@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+
+        <title>我が家の愛犬ポチの日記</title>
+
+    </head>
+
+    <body>
+
+        <h1>我が家の愛犬ポチの日記</h1>
+
+        <img src="{% static "images/av1.jpg" %}" alt="表示できません">
+        <img src="{% static "images/av2.jpg" %}" alt="表示できません">
+        <img src="{% static "images/av3.jpg" %}" alt="表示できません">
+        <img src="{% static "images/av4.jpg" %}" alt="表示できません">
+
+        <h2>うちの可愛い愛犬ポチを紹介するホームページです。</h2>
+
+        <p><a href="{% url 'myapp_yuzuri:welcome' %}">可愛いわんちゃんがうちに来てくれました</a></p>
+        <p><a href="{% url 'myapp_yuzuri:like' %}">ポチの好きな食べ物</a></p>
+        <p><a href="{% url 'myapp_yuzuri:dislike' %}">ポチの嫌いな食べ物</a></p>
+        <p><a href="{% url 'myapp_yuzuri:birthday' %}">ポチが１才になりました</a></p>
+
+    </body>
+
+</html>
