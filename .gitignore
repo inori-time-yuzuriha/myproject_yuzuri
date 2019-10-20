@@ -1,3 +1,6 @@
+#下に記述されたファイルがgitの管理から外れる
+settings_local.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
