@@ -26,7 +26,7 @@ from .settings_local import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['52.192.52.5']
 
 
 # Application definition
