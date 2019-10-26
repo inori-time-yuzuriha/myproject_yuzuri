@@ -20,13 +20,22 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
+
 # SECURITY WARNING: keep the secret key used in production secret!
-from .settings_local import *
+import environ
+
+env = environ.Env(DEBUG=(bool,False))
+env.read_env(os.path.join(BASE_DIR,'.env'))
+
+SECRET_KEY = env('SECRET_KEY')
+
+DEBUG = env('DEBUG')
+
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+#DEBUG=TRUE ↓削除
 
 
 # Application definition
@@ -78,7 +87,13 @@ WSGI_APPLICATION = 'myproject_yuzuri.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'mydatabase_yuzuri',
+        'USER': 'yuzuri',
+        'PASSWORD': 'yuzuri1102#',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
